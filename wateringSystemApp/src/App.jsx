@@ -6,13 +6,13 @@ function App() {
     const [moistureLevel, setMoistureLevel] = useState(null);
 
     async function getMoisture() {
-        let result = await fetch("http://localhost:8080/measure");
+        let result = await fetch("/measure");
         let data = await result.json();
         setMoistureLevel(data);
     }
 
     async function waterPlant() {
-        await fetch("http://localhost:8080/water");
+        await fetch("/water");
     }
 
     return (
